@@ -1,0 +1,369 @@
+#root {
+  max-width: 500px;
+  margin: 0 ;
+  padding-top: 25px;
+  text-align: center;
+  display: flex;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+#ton-connect-button {
+  display: flex;
+}
+
+.content-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding:0 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.buttons-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+input {
+  width: 200px;
+  height: 35px;
+  border: 2px solid #ffffff66;
+  border-radius: 20px;
+  padding-left: 10px;
+  outline: none;
+  background-color: #212121;
+}
+
+.search-button {
+  color: white;
+  background-color: #2990FF;
+  border-radius: 20px;
+  padding: 9px 12px 9px 12px;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;  
+  
+}
+
+.content-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF14;
+  width: 40%;
+  border-radius: 20px;
+}
+
+.content-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card-text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px 20px;
+}
+
+.row-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  padding-top: 16px;
+}
+
+.card-img {
+  border-radius: 20px;
+  overflow: hidden;
+  height: 227px; /* Фиксированная высота для всех изображений */
+  width: 100%; /* Обеспечить, чтобы изображение занимало всю ширину контейнера */
+  object-fit: cover; /* Обрезка изображения для соответствия контейнеру */
+}
+
+.row-text h4, .card-text p {
+  text-align: left; /* Установить выравнивание текста влево */
+}
+
+.row-text p {
+  background-color: #2990FF;
+  padding: 0 8px;
+  border-radius: 20px;
+}
+
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 227px; /* Та же высота, что и у изображения, чтобы контейнеры были равной высоты */
+}
+
+
+.img-wrapper {
+  width: 40%;
+}
+
+.about h4 {
+  color: #2990FF;
+  font-weight: 500;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-text-wrapper {
+ display: flex;
+ flex-direction: column;
+ background-color: #FFFFFF14;
+ border-radius: 20px;
+ padding: 16px 24px;
+}
+
+.rating {
+  border-bottom: 1px solid #FFFFFF0D;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  padding: 8px 16px;
+  justify-content: space-between;
+}
+
+.plot {
+  padding: 8px 16px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #FFFFFF0D;
+}
+
+.genre {
+  padding: 8px 16px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #FFFFFF0D;
+}
+
+.director {
+  padding: 8px 16px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #FFFFFF0D;
+}
+
+
+.details {
+  padding: 8px 16px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #FFFFFF0D;
+}
+
+
+
+.back-to-search {
+  background-color: #FFFFFF14;
+  border: none;
+  width: 40%;
+}
+
+.to-donate-button {
+  color: #212121;
+  background-color: #FFFFFFF2;
+  border: none;
+  width: 50%;
+}
+
+.amount {
+  margin-top: 24px;
+  width: 90%;
+}
+
+.donate-form p {
+  color: #AAAAAA;
+  width: 100%;
+}
+
+.cancel-button {
+  background-color: #FFFFFF14;
+  border: none;
+  width: 40%;
+}
+
+.submit-button {
+  background-color: #2990FF;
+  border: none;
+  outline: none;
+  width: 50%;
+}
+
+.buttons-wrapper-donate {
+  width: 90%;
+}
+
+.donate-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.connect-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-to-search-after-donate {
+  background-color: #2990FF;
+  border: none;
+  outline: none;
+  width: 50%;
+}
+
+.buttons-after-donate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.search-results {
+  padding-top: 24px;
+}
+
+.amount-sent {
+  color: #32E55E;
+}
+
+.payment-confirmation-title {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.payment-confirmation-title p {
+  width: 80%;
+  text-align: center;
+}
+
+.payment-confirmation-title h3 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.left-part {
+  width: 45%;
+}
+
+.right-part p {
+  color: #2990FF;
+}
+
+.right-part h3 {
+  margin: 0;
+}
+
+.right-part {
+  text-align: left;
+}
+
+.confirm-poster { 
+  width: 50%; 
+  object-fit: cover; 
+}
+
+.confirm-info-wrapper {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  border: 1px solid #FFFFFF0D;
+  border-radius: 20px;
+}
+
+.alert {
+  margin-top: 20px;
+}
+
+.success-amount {
+  margin-top: 20px;
+  
+}
+
+.amount-in-ton {
+  font-size: 56px;
+  color: #32E55E;
+  font-family: 'Inter';
+  font-weight: 700;
+}
