@@ -113,6 +113,13 @@ input {
   justify-content: center;
 }
 
+.content-card:hover {
+  box-shadow: 0 10px 10px -10px rgba(255, 255, 255, 0.185);
+  -webkit-transform: scale(1.015);
+  transform: scale(1.015);
+  transition: 0.1s;
+}
+
 .card-text {
   text-align: center;
   display: flex;
