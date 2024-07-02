@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ContentCard from './ContentCard';
 
 interface SearchResult {
@@ -21,6 +21,9 @@ interface OmdbApiResponse {
 const SearchPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
+  const [searchPerformed, setSearchPerformed] = useState<boolean>(false);
+  const searchButtonRef = useRef<HTMLButtonElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     // Load saved search term and results from localStorage
@@ -63,12 +66,23 @@ const SearchPage: React.FC = () => {
   };
 
   const handleSearch = async () => {
+    if (searchButtonRef.current) {
+      searchButtonRef.current.classList.add('shake');
+      setTimeout(() => {
+        if (searchButtonRef.current) {
+          searchButtonRef.current.classList.remove('shake');
+        }
+      }, 500);
+    }
+
     try {
       const response = await fetch(`https://www.omdbapi.com/?s=${searchTerm}&apikey=e55bdc80`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
       const data: OmdbApiResponse = await response.json();
+
+      setSearchPerformed(true);
 
       if (data.Search) {
         const results: SearchResult[] = await Promise.all(
@@ -94,19 +108,35 @@ const SearchPage: React.FC = () => {
     }
   };
 
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
   return (
     <div className="search-page">
       <div className="search-container">
         <input
+          ref={inputRef}
           type="text"
           placeholder="Enter movie title"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
+          onKeyPress={handleKeyPress}
         />
-        <button className='search-button' onClick={handleSearch}>Search</button>
+        <button
+          ref={searchButtonRef}
+          className='search-button'
+          onClick={handleSearch}
+        >
+          Search
+        </button>
       </div>
       <div className="search-results">
-        {searchResults.length > 0 ? (
+        {searchPerformed && searchResults.length === 0 ? (
+          <p>No content found for your search.</p>
+        ) : searchResults.length > 0 ? (
           <div>
             <h2>Search Results:</h2>
             <div className="content-cards">
