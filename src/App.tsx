@@ -7,7 +7,7 @@ function App() {
 
 
   return (
-    <Router>
+    <Router basename='/content_user'>
       <div className="App">
         <header className="App-header">
           <h2>ContentPay</h2>
