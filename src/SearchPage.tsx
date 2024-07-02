@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ContentCard from './ContentCard';
 
 interface SearchResult {
@@ -6,7 +6,7 @@ interface SearchResult {
   Poster: string;
   imdbRating: string;
   imdbID: string;
-  Genre: string; // Добавлено поле для жанра
+  Genre: string;
 }
 
 interface OmdbApiResponse {
@@ -21,6 +21,26 @@ interface OmdbApiResponse {
 const SearchPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
+
+  useEffect(() => {
+    // Load saved search term and results from localStorage
+    const savedSearchTerm = localStorage.getItem('searchTerm');
+    const savedSearchResults = localStorage.getItem('searchResults');
+
+    if (savedSearchTerm) {
+      setSearchTerm(savedSearchTerm);
+    }
+
+    if (savedSearchResults) {
+      setSearchResults(JSON.parse(savedSearchResults));
+    }
+  }, []);
+
+  useEffect(() => {
+    // Save search term and results to localStorage whenever they change
+    localStorage.setItem('searchTerm', searchTerm);
+    localStorage.setItem('searchResults', JSON.stringify(searchResults));
+  }, [searchTerm, searchResults]);
 
   const fetchGenreAndRating = async (imdbID: string) => {
     try {
