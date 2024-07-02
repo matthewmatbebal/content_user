@@ -83,7 +83,7 @@ input {
 
 .search-button {
   color: white;
-  background-color: #2990FF;
+  background-color: #00ff0d;
   border-radius: 20px;
   padding: 9px 12px 9px 12px;
 }
@@ -229,7 +229,7 @@ input {
 
 .to-donate-button {
   color: #212121;
-  background-color: #00ff80f2;
+  background-color: #fffffff2;
   border: none;
   width: 50%;
 }
