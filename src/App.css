@@ -291,6 +291,7 @@ input {
 .back-to-search-after-donate {
   background-color: #2990FF;
   border: none;
+  color: white;
   outline: none;
   width: 50%;
 }
